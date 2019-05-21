@@ -1,0 +1,49 @@
+<mat-toolbar>
+  <div fxHide.gt-xs>
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+  <div>
+    <a routerLink="/dashboard">
+      <img src="/assets/img/customer.jpg" alt="Logo" class="Header-dashboard">
+    </a>
+  </div>
+  <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs class="Header-list">
+    <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+      <li>
+        <button mat-button routerLink="/dashboard" routerLinkActive="active-link">
+          <mat-icon>dashboard</mat-icon>
+          <span>DASHBOARD</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button>
+          <mat-icon>photo</mat-icon>
+          <span>PAINTINGS</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button routerLink="/customers" routerLinkActive="active-link">
+          <mat-icon>group</mat-icon>
+          <span>CUSTOMERS</span>
+        </button>
+      </li>
+      <li>
+        <button mat-button routerLink="/sales" routerLinkActive="active-link">
+          <mat-icon>insert_chart</mat-icon>
+          <span>SALES</span>
+        </button>
+      </li>
+      <li>
+        <span class="pipe">|</span>
+      </li>
+      <li>
+        <button mat-button>
+          <mat-icon>power_settings_new</mat-icon>
+          <span>LOGOUT</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>

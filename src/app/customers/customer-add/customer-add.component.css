@@ -1,0 +1,160 @@
+form{
+    margin-left: 20px;
+    width: 86%;
+}
+
+mat-radio-group{
+    display: flex;
+    margin-top: 7px;
+}
+
+mat-radio-button
+{
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 330px;
+    padding-left: 20px;
+    border: 1px solid rgb(199, 213, 231);
+    border-radius: 4px;
+}
+
+mat-radio-button:nth-child(2){
+    margin-left: 20px;
+}
+
+:host ::ng-deep .mat-radio-label{
+    display: flex;
+    height: 40px;
+    width: 100%;
+}
+
+.cdk-focused{
+    border: 1px solid rgb(243, 94, 155);
+    box-shadow: 0 0 8px 0 rgb(243, 94, 155);
+}
+
+hr{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+    border-color: red;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-color: rgb(199, 213, 231);
+}
+
+.customer-type{
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(75, 91, 112);
+}
+
+input[type="text"]{
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgb(199, 213, 231);
+    background-color: transparent;
+    border-radius: 4px;
+    margin: 8px 0;
+    outline: none;
+    padding: 8px;
+    box-sizing: border-box;
+    transition: .3s;
+}
+
+input[type="text"]:focus{
+    border-color: rgb(243, 94, 155);
+    box-shadow: 0 0 8px 0 rgb(243, 94, 155);
+}
+
+.fullname input[type="text"]{
+    padding-left: 40px;
+}
+
+.fullname{
+    position: relative;
+}
+
+mat-icon{
+    position: absolute;
+    left: 0;
+    top: 8px;
+    padding: 8px 8px;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.phone, .send{
+    top: 28px;
+}
+
+.personal-phone{
+    position: relative;
+    width: 48%;
+}
+
+.personal-phone input[type="text"]{
+    padding-left: 40px;
+}
+
+.personal-mail{
+    position: relative;
+    width: 50%;
+    margin-left: 20px;
+}
+
+.personal-mail input[type="text"]{
+    padding-left: 40px;
+}
+
+.personal{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.address{
+    margin-top: 20px;
+}
+
+.fullAddress{
+    display: flex;
+    margin-top: 20px;
+}
+
+.fullAddress-town{
+    width: 50%;
+}
+
+.fullAddress-zip{
+    margin-left: 20px;
+    width: 50%;
+}
+
+button{
+    width: 49%;
+}
+
+button:nth-child(2){
+    margin-left: 12px;
+}
+
+.buttons{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.mat-button{
+    height: 40px;
+}
+
+.cancel{
+    background-color: rgb(168, 179, 195);
+}
+
+.save{
+    background-color: rgb(244, 116, 165);
+}

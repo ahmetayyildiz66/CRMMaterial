@@ -1,0 +1,42 @@
+<mat-toolbar>
+  <div fxLayout fxLayoutAlign="center center" class="Customers-left">
+    <mat-icon class="Customers-left-icon">group</mat-icon>
+    <h4>CUSTOMERS</h4>
+  </div>
+
+  <div fxFlex fxLayout fxLayoutAlign="end" class="Customers-right">
+    <ul fxLayout fxLayoutGap="20px" class="Customers-right-list">
+      <li class="inputWithIcon">
+        <input type="text" placeholder="Search" />
+        <mat-icon>search</mat-icon>
+      </li>
+      <li fxLayout fxLayoutAlign="center center">
+        <button mat-button class="Filter-button">
+          <mat-icon class="filter-button-icon">filter_list</mat-icon>
+          <span class="Filter-button-text">Filter by</span>
+        </button>
+      </li>
+      <li fxLayout fxLayoutAlign="center center">
+        <button mat-button class="Add-customer" (click)="onAddCustomer()">
+          <span>ADD CUSTOMER</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</mat-toolbar>
+<div class="Customers">
+  <div class="Customers-narrow">
+    <app-customer-list></app-customer-list>
+  </div>
+  <div class="Customers-wide">
+    <app-customer-add *ngIf="addCustomer; else select"></app-customer-add>
+    <ng-template #select>
+      <div class="customer-area">
+        <mat-icon class="customer-area-icon">child_care</mat-icon>
+      </div>
+      <label class="select-customer">
+        Select customer to see more information
+      </label>
+    </ng-template>
+  </div>
+</div>

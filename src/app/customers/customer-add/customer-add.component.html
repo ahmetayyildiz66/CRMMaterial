@@ -1,0 +1,54 @@
+<form>
+  <h2>Add Customer</h2>
+
+  <span class="customer-type">CUSTOMER TYPE</span>
+  <mat-radio-group aria-label="Select an option">
+    <mat-radio-button value="individual">Individual</mat-radio-button>
+    <mat-radio-button value="artgalery">Art Galery</mat-radio-button>
+  </mat-radio-group>
+
+  <hr />
+
+  <span class="customer-type">FULL NAME</span>
+  <div class="fullname">
+    <input type="text" placeholder="Enter fullname" />
+    <mat-icon class="name">account_circle</mat-icon>
+  </div>
+
+  <div class="personal">
+    <div class="personal-phone">
+      <span class="customer-type">FULL NAME</span>
+      <input type="text" placeholder="phone" />
+      <mat-icon class="phone">phone_iphone</mat-icon>
+    </div>
+    <div class="personal-mail">
+      <span class="customer-type">EMAIL ADDRESS</span>
+      <input type="text" placeholder="email" />
+      <mat-icon class="send">send</mat-icon>
+    </div>
+  </div>
+
+  <hr />
+
+  <span class="customer-type address">ADDRESS</span>
+  <div>
+    <input type="text" placeholder="Address">
+  </div>
+
+  <div class="fullAddress">
+    <div class="fullAddress-town">
+      <span class="customer-type">TOWN</span>
+      <input type="text" placeholder="town">
+    </div>
+    <div class="fullAddress-zip">
+      <span class="customer-type">ZIP-CODE</span>
+      <input type="text" placeholder="zip">
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button mat-button class="cancel">CANCEL</button>
+    <button mat-button class="save">SAVE CUSTOMER</button>
+  </div>
+
+</form>
