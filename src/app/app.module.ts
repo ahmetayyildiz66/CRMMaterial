@@ -13,6 +13,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CustomersComponent } from './customers/customers.component';
 import { CustomerListComponent } from './customers/customer-list/customer-list.component';
 import { CustomerAddComponent } from './customers/customer-add/customer-add.component';
+import { CustomerDetailComponent } from './customers/customer-detail/customer-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CustomerAddComponent } from './customers/customer-add/customer-add.comp
     DashboardComponent,
     CustomersComponent,
     CustomerListComponent,
-    CustomerAddComponent
+    CustomerAddComponent,
+    CustomerDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,45 @@
+<div class="individual">
+  <span>INDIVIDUAL CUSTOMER</span>
+  <div class="individual-fullname">
+    <h1>{{ customer.fullName }}</h1>
+    <div class="individual-buttons">
+      <button class="button-edit">
+        <mat-icon class="edit">edit</mat-icon>
+      </button>
+      <button class="button-delete">
+        <mat-icon class="delete">delete</mat-icon>
+      </button>
+    </div>
+  </div>
+  <hr>
+  <div class="individual-info">
+    <div class="individual-info-phone">
+      <span>PHONE NUMBER</span>
+      <p class="individual-text">{{ customer.phoneNumber }}</p>    
+    </div>
+    <div class="individual-info-mail">
+      <span>EMAIL ADDRESS</span>
+      <p class="individual-text">{{ customer.email }}</p>
+    </div>
+  </div>
+  <hr>
+  <div class="individiaul-address">
+    <span class="individual-residence-address">ADDRESS</span>
+    <p>{{ customer.address }}</p>
+  </div>
+  <div class="individual-residence">
+    <div class="individual-residence-town">
+      <span>TOWN</span>
+      <p>{{ customer.town }}</p>
+    </div>
+    <div class="individual-residence-zipcode">
+      <span>ZIP CODE</span>
+      <p>{{ customer.zipCode }}</p>
+    </div>
+  </div>
+  <hr>
+  <!-- <h2>Customer Paintings</h2>
+  <mat-card class="paintings">
+
+  </mat-card> -->
+</div>

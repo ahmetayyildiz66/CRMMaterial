@@ -1,0 +1,85 @@
+h1{
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+}
+
+.individual{
+    background-color: white;
+    margin-left: 40px;
+    margin-top: 60px;
+    width: 83%;
+}
+
+.individual-fullname{
+    display: flex;
+    align-items: center;
+}
+
+.individual-buttons{
+    display: flex;
+    margin-left: auto;
+}
+
+.individual-info{
+    display: flex;
+}
+
+.individual-info-mail{
+    margin-left: 35%;
+}
+
+.individual-text{
+    font-size: 1.1em;
+}
+
+.mat-icon{
+    margin: 0;
+}
+
+button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    background-color: rgb(244, 248, 251);
+    border-radius: 4px;
+}
+
+.button-edit{
+    width: 100%;
+    margin-right: 20px;
+} 
+
+.button-delete{
+    width: 100%;
+}
+
+.edit, .delete{
+    display: flex;
+}
+
+hr{
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    border-color: rgb(199, 213, 231);
+}
+
+span{
+    color: rgb(141, 148, 159);
+}
+
+.individual-residence{
+    display: flex;
+    margin-top: 40px;
+}
+
+.individual-residence-zipcode{
+    margin-left: 40%;
+}

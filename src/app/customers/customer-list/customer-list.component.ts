@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Customer } from '../customer.model';
 import { MatPaginator, MatTableDataSource, MatCheckbox } from '@angular/material';
@@ -10,11 +10,17 @@ import { MatPaginator, MatTableDataSource, MatCheckbox } from '@angular/material
 })
 export class CustomerListComponent implements OnInit {
 
+  @Output() rowClicked = new EventEmitter<boolean>();
+  @Output() row = new EventEmitter<Customer>();
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
   displayedColumns: string[] = ['checkbox','fullname','phone', 'paintings'];
   customers: Customer[];
-  dataSource = new MatTableDataSource<Customer>();
-  @ViewChild(MatPaginator) paginator: MatPaginator;
   selectedRow: number;
+
+  dataSource = new MatTableDataSource<Customer>();
+
+
 
   constructor(private customerService: CustomerService) { }
 
@@ -26,7 +32,10 @@ export class CustomerListComponent implements OnInit {
 
   onRow(row,index){
     console.log(row);
+    this.rowClicked.emit(true);
+    this.row.emit(row);
     this.selectedRow = index;
   }
+
 
 }
