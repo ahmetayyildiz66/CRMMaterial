@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Customer } from '../customer.model';
-import { MatPaginator, MatTableDataSource } from '@angular/material';
+import { MatPaginator, MatTableDataSource, MatCheckbox } from '@angular/material';
 
 @Component({
   selector: 'app-customer-list',
@@ -10,10 +10,11 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 })
 export class CustomerListComponent implements OnInit {
 
-  displayedColumns: string[] = ['fullname','phone', 'paintings'];
+  displayedColumns: string[] = ['checkbox','fullname','phone', 'paintings'];
   customers: Customer[];
   dataSource = new MatTableDataSource<Customer>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
+  selectedRow: number;
 
   constructor(private customerService: CustomerService) { }
 
@@ -23,9 +24,9 @@ export class CustomerListComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  selectRow(row){
-    console.log(row.fullName);
-    alert(row.fullName);
+  onRow(row,index){
+    console.log(row);
+    this.selectedRow = index;
   }
 
 }
