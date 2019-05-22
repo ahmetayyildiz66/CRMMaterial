@@ -26,7 +26,7 @@
 </mat-toolbar>
 <div class="Customers">
   <div class="Customers-narrow">
-    <app-customer-list (rowClicked)="isRowClicked($event)" (row)="onCustomerDetail($event)"></app-customer-list>
+    <app-customer-list (rowClicked)="isRowClicked($event)"></app-customer-list>
   </div>
   <div class="Customers-wide">
     <app-customer-add *ngIf="addCustomer"></app-customer-add>

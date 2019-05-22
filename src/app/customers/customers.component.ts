@@ -14,9 +14,14 @@ export class CustomersComponent implements OnInit {
   customerDetail = false;
   customer: Customer;
 
-  constructor() { }
+  constructor(private customerService: CustomerService) { }
 
   ngOnInit() {
+    this.customerService.getCustomerOutput().subscribe(
+      (customer: Customer) => {
+        this.customer = customer
+      }
+    )
   }
 
   isRowClicked(click: boolean){
@@ -25,10 +30,6 @@ export class CustomersComponent implements OnInit {
 
   onAddCustomer(){
     this.addCustomer = true;
-  }
-
-  onCustomerDetail(customer: Customer){
-    this.customer = customer;
   }
 
 

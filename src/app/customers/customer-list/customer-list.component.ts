@@ -11,7 +11,6 @@ import { MatPaginator, MatTableDataSource, MatCheckbox } from '@angular/material
 export class CustomerListComponent implements OnInit {
 
   @Output() rowClicked = new EventEmitter<boolean>();
-  @Output() row = new EventEmitter<Customer>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   displayedColumns: string[] = ['checkbox','fullname','phone', 'paintings'];
@@ -30,10 +29,9 @@ export class CustomerListComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
   }
 
-  onRow(row,index){
-    console.log(row);
+  onRow(customer,index){
+    this.customerService.getCustomerOutput().emit(customer);
     this.rowClicked.emit(true);
-    this.row.emit(row);
     this.selectedRow = index;
   }
 

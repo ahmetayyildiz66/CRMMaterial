@@ -1,6 +1,10 @@
 import { Customer } from "./customer.model";
+import { EventEmitter } from '@angular/core';
 
 export class CustomerService {
+
+  private customerSelected = new EventEmitter<Customer>();
+
   private customers: Customer[] = [
     new Customer(
       "Mateusz Dembek",
@@ -105,5 +109,9 @@ export class CustomerService {
 
   getCustomers() {
     return this.customers.slice();
+  }
+
+  getCustomerOutput(){
+    return this.customerSelected;
   }
 }
