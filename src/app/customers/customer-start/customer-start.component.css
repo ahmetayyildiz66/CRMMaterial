@@ -1,0 +1,19 @@
+.customer-area{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 180px;
+}
+
+.customer-area-icon{
+    width: 100px;
+    height: 100px;
+    font-size: 100px;
+}
+
+.select-customer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

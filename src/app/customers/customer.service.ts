@@ -114,4 +114,8 @@ export class CustomerService {
   getCustomerOutput(){
     return this.customerSelected;
   }
+
+  getCustomer(index: number){
+    return this.customers[index];
+  }
 }

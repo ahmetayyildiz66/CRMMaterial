@@ -30,7 +30,7 @@ tr:hover{
 }
 
 tr:focus{
-    background-color: red;
+    background-color: rgb(223, 243, 240);
 }
 
 a:visited{

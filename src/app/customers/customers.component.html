@@ -30,7 +30,11 @@
   </div>
   <div class="Customers-wide">
     <app-customer-add *ngIf="addCustomer"></app-customer-add>
-    <app-customer-detail [customer]="customer" *ngIf="customerDetail; else select"></app-customer-detail>
+    <!-- <app-customer-start></app-customer-start> -->
+    
+    <router-outlet></router-outlet>
+
+    <!-- <app-customer-detail [customer]="customer" *ngIf="customerDetail; else select"></app-customer-detail>
     <ng-template #select>
       <div class="customer-area">
         <mat-icon class="customer-area-icon">child_care</mat-icon>
@@ -38,6 +42,6 @@
       <label class="select-customer">
         Select customer to see more information
       </label>
-    </ng-template>
+    </ng-template> -->
   </div>
 </div>
