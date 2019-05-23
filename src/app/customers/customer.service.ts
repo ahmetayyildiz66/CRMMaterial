@@ -1,9 +1,10 @@
 import { Customer } from "./customer.model";
 import { EventEmitter } from '@angular/core';
+import { Subject } from 'rxjs';
 
 export class CustomerService {
 
-  private customerSelected = new EventEmitter<Customer>();
+  // private customerChanged = new Subject<Customer[]>();
 
   private customers: Customer[] = [
     new Customer(
@@ -111,9 +112,9 @@ export class CustomerService {
     return this.customers.slice();
   }
 
-  getCustomerOutput(){
-    return this.customerSelected;
-  }
+  // getCustomerOutput(){
+  //   return this.customerChanged;
+  // }
 
   getCustomer(index: number){
     return this.customers[index];

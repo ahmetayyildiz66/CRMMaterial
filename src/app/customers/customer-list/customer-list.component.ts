@@ -30,7 +30,7 @@ export class CustomerListComponent implements OnInit {
   }
 
   onRow(customer,index){
-    this.customerService.getCustomerOutput().emit(customer);
+    //this.customerService.getCustomerOutput().next(customer);
     this.rowClicked.emit(true);
     this.selectedRow = index;
   }

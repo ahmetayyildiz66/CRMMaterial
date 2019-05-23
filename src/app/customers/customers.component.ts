@@ -14,14 +14,9 @@ export class CustomersComponent implements OnInit {
   customerDetail = false;
   customer: Customer;
 
-  constructor(private customerService: CustomerService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.customerService.getCustomerOutput().subscribe(
-      (customer: Customer) => {
-        this.customer = customer
-      }
-    )
   }
 
   isRowClicked(click: boolean){
