@@ -6,12 +6,16 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 import { CustomersComponent } from '../customers/customers.component';
 import { CustomerStartComponent } from '../customers/customer-start/customer-start.component';
 import { CustomerDetailComponent } from '../customers/customer-detail/customer-detail.component';
+import { CustomerAddComponent } from '../customers/customer-add/customer-add.component';
+import { CustomerEditComponent } from '../customers/customer-edit/customer-edit.component';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'customers' , component: CustomersComponent, children: [
     {path: '', component: CustomerStartComponent},
-    {path: ':id', component: CustomerDetailComponent}
+    {path: 'new', component: CustomerAddComponent},
+    {path: ':id', component: CustomerDetailComponent},
+    {path: ':id/edit', component: CustomerEditComponent}
   ]},
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'}
 ]

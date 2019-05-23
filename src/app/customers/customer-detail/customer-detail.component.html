@@ -3,7 +3,7 @@
   <div class="individual-fullname">
     <h1>{{ customer.fullName }}</h1>
     <div class="individual-buttons">
-      <button class="button-edit">
+      <button class="button-edit" (click)="onEditCustomer()">
         <mat-icon class="edit">edit</mat-icon>
       </button>
       <button class="button-delete">

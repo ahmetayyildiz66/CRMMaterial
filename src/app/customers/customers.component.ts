@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from './customer.service';
 import { Customer } from './customer.model';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-customers',
@@ -10,11 +11,10 @@ import { Customer } from './customer.model';
 })
 export class CustomersComponent implements OnInit {
 
-  addCustomer = false;
   customerDetail = false;
   customer: Customer;
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private customerService: CustomerService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.customerService.getCustomerOutput().subscribe(
@@ -29,7 +29,7 @@ export class CustomersComponent implements OnInit {
   }
 
   onAddCustomer(){
-    this.addCustomer = true;
+    this.router.navigate(['new'], {relativeTo: this.route});
   }
 
 

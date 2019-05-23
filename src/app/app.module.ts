@@ -15,6 +15,7 @@ import { CustomerListComponent } from './customers/customer-list/customer-list.c
 import { CustomerAddComponent } from './customers/customer-add/customer-add.component';
 import { CustomerDetailComponent } from './customers/customer-detail/customer-detail.component';
 import { CustomerStartComponent } from './customers/customer-start/customer-start.component';
+import { CustomerEditComponent } from './customers/customer-edit/customer-edit.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CustomerStartComponent } from './customers/customer-start/customer-star
     CustomerListComponent,
     CustomerAddComponent,
     CustomerDetailComponent,
-    CustomerStartComponent
+    CustomerStartComponent,
+    CustomerEditComponent
   ],
   imports: [
     BrowserModule,
