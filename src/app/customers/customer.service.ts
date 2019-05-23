@@ -4,7 +4,7 @@ import { Subject } from 'rxjs';
 
 export class CustomerService {
 
-  // private customerChanged = new Subject<Customer[]>();
+  private customersChanged = new Subject<Customer[]>();
 
   private customers: Customer[] = [
     new Customer(
@@ -112,11 +112,17 @@ export class CustomerService {
     return this.customers.slice();
   }
 
-  // getCustomerOutput(){
-  //   return this.customerChanged;
-  // }
+  getCustomersChanged(){
+     return this.customersChanged;
+  }
 
   getCustomer(index: number){
     return this.customers[index];
   }
+
+  addCustomer(customer: Customer){
+    this.customers.push(customer);
+    this.customersChanged.next(this.customers.slice());
+  }
+
 }

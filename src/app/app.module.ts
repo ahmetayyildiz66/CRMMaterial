@@ -16,6 +16,7 @@ import { CustomerAddComponent } from './customers/customer-add/customer-add.comp
 import { CustomerDetailComponent } from './customers/customer-detail/customer-detail.component';
 import { CustomerStartComponent } from './customers/customer-start/customer-start.component';
 import { CustomerEditComponent } from './customers/customer-edit/customer-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CustomerEditComponent } from './customers/customer-edit/customer-edit.c
     BrowserAnimationsModule,
     MaterialModule,
     FlexLayoutModule,
-    RoutingModule
+    RoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

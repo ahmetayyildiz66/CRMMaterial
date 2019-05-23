@@ -1,14 +1,17 @@
-import { Component, OnInit, ViewChild, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ViewChild, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Customer } from '../customer.model';
 import { MatPaginator, MatTableDataSource, MatCheckbox } from '@angular/material';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-customer-list',
   templateUrl: './customer-list.component.html',
   styleUrls: ['./customer-list.component.css']
 })
-export class CustomerListComponent implements OnInit {
+export class CustomerListComponent implements OnInit, OnDestroy {
+
+  private subscription: Subscription;
 
   @Output() rowClicked = new EventEmitter<boolean>();
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -27,9 +30,21 @@ export class CustomerListComponent implements OnInit {
     this.customers = this.customerService.getCustomers();
     this.dataSource = new MatTableDataSource<Customer>(this.customers);
     this.dataSource.paginator = this.paginator;
+    this.subscription = this.customerService.getCustomersChanged().subscribe(
+      (customers: Customer[]) => {
+        this.customers = customers;
+        this.dataSource = new MatTableDataSource<Customer>(this.customers);
+        this.dataSource.paginator = this.paginator;
+      }
+    )
+    
   }
 
-  onRow(customer,index){
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
+  }
+
+  onRow(index){
     //this.customerService.getCustomerOutput().next(customer);
     this.rowClicked.emit(true);
     this.selectedRow = index;
