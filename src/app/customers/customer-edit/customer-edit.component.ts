@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+
+import { Customer } from '../customer.model';
+import { CustomerService } from '../customer.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-customer-edit',
@@ -7,9 +12,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CustomerEditComponent implements OnInit {
 
-  constructor() { }
+  id: number;
+  customer: Customer;
+  customerEditForm: FormGroup;
+
+  constructor(private route: ActivatedRoute, private customerService: CustomerService) { }
 
   ngOnInit() {
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.id = +params['id'];
+        this.customer = this.customerService.getCustomer(this.id);
+        this.initForm();
+      } 
+    )
+  } 
+
+  initForm(){
+    this.customerEditForm = new FormGroup({
+      'fullname': new FormControl(this.customer.fullName, Validators.required),
+      'phone': new FormControl(this.customer.phoneNumber, Validators.required),
+      'email': new FormControl(this.customer.email, [Validators.required, Validators.email]),
+      'address': new FormControl(this.customer.address, Validators.required),
+      'town': new FormControl(this.customer.town, Validators.required),
+      'zip': new FormControl(this.customer.zipCode, Validators.required)
+    });
   }
 
 }

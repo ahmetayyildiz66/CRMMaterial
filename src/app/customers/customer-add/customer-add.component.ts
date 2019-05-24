@@ -17,10 +17,8 @@ export class CustomerAddComponent implements OnInit {
 
   onAddCustomer(form: NgForm){
     const value = form.value;
-    const newCustomer = new Customer(value.fullname, value.phone, 2,value.email, value.address,value.town,value.zipCode);
-    console.log('new Customer: '+ newCustomer);
+    const newCustomer = new Customer(value.fullname, value.phone, 0, value.email, value.address,value.town,value.zipCode);
     this.customerService.addCustomer(newCustomer);
-    console.log(this.customerService.getCustomer(11));
   }
 
 }

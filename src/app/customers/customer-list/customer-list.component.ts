@@ -26,15 +26,19 @@ export class CustomerListComponent implements OnInit, OnDestroy {
 
   constructor(private customerService: CustomerService) { }
 
+  private dataSourceSetup(customers: Customer[]){
+    this.dataSource = new MatTableDataSource<Customer>(customers);
+    this.dataSource.paginator = this.paginator;
+  }
+
   ngOnInit() {
     this.customers = this.customerService.getCustomers();
-    this.dataSource = new MatTableDataSource<Customer>(this.customers);
-    this.dataSource.paginator = this.paginator;
+    this.dataSourceSetup(this.customers);
+    
     this.subscription = this.customerService.getCustomersChanged().subscribe(
       (customers: Customer[]) => {
         this.customers = customers;
-        this.dataSource = new MatTableDataSource<Customer>(this.customers);
-        this.dataSource.paginator = this.paginator;
+        this.dataSourceSetup(this.customers);
       }
     )
     

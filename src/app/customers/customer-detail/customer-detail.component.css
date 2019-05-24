@@ -44,7 +44,8 @@ button{
     width: 45px;
     height: 45px;
     cursor: pointer;
-    background-color: rgb(244, 248, 251);
+    background-color: rgb(132, 206, 200);
+    border: 1px solid #ccc;
     border-radius: 4px;
 }
 
@@ -59,6 +60,7 @@ button{
 
 .edit, .delete{
     display: flex;
+    color: white;
 }
 
 hr{
