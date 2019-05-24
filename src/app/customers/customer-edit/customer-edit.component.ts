@@ -39,4 +39,17 @@ export class CustomerEditComponent implements OnInit {
     });
   }
 
+  onSubmit(){
+    const newCustomer = new Customer(
+      this.customerEditForm.value["fullname"],
+      this.customerEditForm.value["phone"],
+      0,
+      this.customerEditForm.value["email"],
+      this.customerEditForm.value["address"],
+      this.customerEditForm.value["town"],
+      this.customerEditForm.value["zip"]      
+    );
+    this.customerService.updateCustomer(this.id,newCustomer);
+  }
+
 }

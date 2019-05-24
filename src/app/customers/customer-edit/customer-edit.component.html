@@ -1,4 +1,4 @@
-<form [formGroup]="customerEditForm">
+<form [formGroup]="customerEditForm" (ngSubmit)="onSubmit()">
   <h2>Edit Customer</h2>
 
   <span class="customer-type">FULL NAME</span>

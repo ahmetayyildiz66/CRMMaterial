@@ -38,6 +38,8 @@ export class CustomerListComponent implements OnInit, OnDestroy {
     this.subscription = this.customerService.getCustomersChanged().subscribe(
       (customers: Customer[]) => {
         this.customers = customers;
+        console.log('first: '+this.customers[0].fullName);
+        // console.log('list: ' + this.customers[this.selectedRow].fullName);
         this.dataSourceSetup(this.customers);
       }
     )

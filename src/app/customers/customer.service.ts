@@ -120,9 +120,21 @@ export class CustomerService {
     return this.customers[index];
   }
 
+  private emitCustomers(){
+    console.log('hey'+ this.customers[0].fullName);
+    this.customersChanged.next(this.customers.slice());
+  }
+
   addCustomer(customer: Customer){
     this.customers.push(customer);
-    this.customersChanged.next(this.customers.slice());
+    this.emitCustomers();
+  }
+
+  updateCustomer(index: number, newCustomer: Customer){
+    console.log('fullname: '+ newCustomer.fullName);
+    console.log('email: '+ newCustomer.email);
+    this.customers[index] = newCustomer;
+    this.emitCustomers();
   }
 
 }
