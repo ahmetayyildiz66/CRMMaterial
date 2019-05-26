@@ -17,6 +17,8 @@ import { CustomerDetailComponent } from './customers/customer-detail/customer-de
 import { CustomerStartComponent } from './customers/customer-start/customer-start.component';
 import { CustomerEditComponent } from './customers/customer-edit/customer-edit.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CustomerAddComponent,
     CustomerDetailComponent,
     CustomerStartComponent,
-    CustomerEditComponent
+    CustomerEditComponent,
+    SignupComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
