@@ -9,6 +9,7 @@ import { CustomerDetailComponent } from '../customers/customer-detail/customer-d
 import { CustomerAddComponent } from '../customers/customer-add/customer-add.component';
 import { CustomerEditComponent } from '../customers/customer-edit/customer-edit.component';
 import { SignupComponent } from '../auth/signup/signup.component';
+import { SigninComponent } from '../auth/signin/signin.component';
 
 const routes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
     {path: ':id/edit', component: CustomerEditComponent}
   ]},
   {path: 'signup', component: SignupComponent},
+  {path: 'signin', component: SigninComponent},
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'}
 ]
 

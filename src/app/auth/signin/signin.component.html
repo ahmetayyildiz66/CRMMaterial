@@ -1,0 +1,19 @@
+<form class="form" [formGroup]="signinForm" (ngSubmit)="onSubmit()">
+    <div class="mail-wrapper">
+      <label for="mail">Mail</label>
+      <div class="mail-input">
+        <input type="text" class="mail" formControlName="mail">
+        <mat-icon class="mail-icon">mail</mat-icon>
+      </div>
+    </div>
+    <div class="password-wrapper">
+      <label for="password">Password</label>
+      <div class="password-input">
+        <input type="password" class="password" formControlName="password">
+        <mat-icon class="lock-icon">lock</mat-icon>
+      </div>
+      <button type="submit" style="cursor: pointer" class="signin">Sign in</button>
+    </div>
+    
+  </form>
+  
