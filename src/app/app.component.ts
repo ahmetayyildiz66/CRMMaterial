@@ -10,7 +10,8 @@ export class AppComponent implements OnInit{
   
   ngOnInit(){
     firebase.initializeApp({
-      
+      apiKey: "AIzaSyCbCRfOKEcVrASgAMBjq8zRYWgdpbun1iM",
+      authDomain: "CrmMat.firebaseapp.com"
     });
   }
 }
